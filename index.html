@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Guillaume Goizet</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luxurious+Script&family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- SCROLL TO TOP -->
+    <button id="scrollTopBtn">↑</button>
+    <!-- NAVBAR -->
+    <header>
+      <nav>
+        <a href="#accueil" class="active">Accueil</a>
+        <a href="#apropos">A propos</a>
+        <a href="#competences">Compétences</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <!--<button class="lang-btn" aria-label="Langue">
+    <span class="lang-flag">🇫🇷</span>
+    <svg class="lang-caret" viewBox="0 0 10 6" fill="none">
+      <path d="M1 1L5 5L9 1" stroke="#202328" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>-->
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="accueil">
+      <div class="hero-watermark" aria-hidden="true">Portfolio.</div>
+
+      <div class="photo-card photo-left">
+        <img src="/img/Hero/Picture_Left.png" alt="Guillaume Goizet" />
+      </div>
+      <div class="photo-card photo-center">
+        <img src="/img/Hero/Picture_Center.png" alt="Guillaume Goizet" />
+      </div>
+      <div class="photo-card photo-right">
+        <img src="/img/Hero/Picture_Right.png" alt="Guillaume" />
+      </div>
+
+      <span class="name-tag name-guillaume">Guillaume</span>
+      <span class="name-tag name-goizet">Goizet</span>
+    </section>
+
+    <!-- À PROPOS -->
+    <section class="about" id="apropos">
+      <div class="fade-up">
+        <span class="section-label section-label-white">A Propos</span>
+        <span class="section-line section-line-white"></span>
+      </div>
+
+      <div class="about-body-wrap fade-up">
+        <div class="about-text">
+          <p class="about-title">
+            Guillaume GOIZET <span class="hl">développeur web</span> et
+            <span class="hl">webdesigner</span>.
+          </p>
+          <div class="about-desc">
+            <p>
+              <span class="hl">Étudiant</span> en
+              <span class="hl">Bachelor</span> Cycle Web et Multimédia, je me
+              forme à la création de sites <span class="hl">modernes</span> et
+              <span class="hl">performants</span>. J’accorde une attention
+              particulière à <span class="hl">l’expérience utilisateur</span>,
+              au <span class="hl">design</span> et à la
+              <span class="hl">qualité</span>
+              du code.
+            </p>
+            <br />
+            <p>
+              <span class="hl">Curieux</span> et
+              <span class="hl">rigoureux</span> je développe mes compétences à
+              travers différents projets. Mon objectif est de
+              <span class="hl">concevoir</span> des solutions web
+              <span class="hl">efficaces</span>,
+              <span class="hl">esthétiques</span> et
+              <span class="hl">adaptées</span> aux besoins.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-avatar">
+          <img
+            class="avatar-blob"
+            src="/img/About/Avatar.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <!-- <div class="avatar-photo"> 
+        <img src="/img/About/Avatar.png"
+             alt="Avatar Guillaume">
+      </div>-->
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section class="skills" id="competences">
+      <div class="fade-up">
+        <span class="section-label section-label-dark">Mes Compétences</span>
+        <span class="section-line section-line-dark"></span>
+      </div>
+
+      <!--<div class="skills-inner">
+        <div class="skills-left fade-up">
+          <div class="skills-grid">
+            <div class="skill-card">
+              <h3>Frontend</h3>
+              <p>HTML, CSS, JavaScript, React, Vue.js, Tailwind CSS</p>
+            </div>
+            <div class="skill-card">
+              <h3>Backend</h3>
+              <p>Node.js, Express, Python, REST API, GraphQL</p>
+            </div>
+            <div class="skill-card">
+              <h3>Base de données</h3>
+              <p>MongoDB, PostgreSQL, MySQL, Firebase</p>
+            </div>
+            <div class="skill-card">
+              <h3>Outils</h3>
+              <p>Git, Docker, Figma, VS Code, Linux</p>
+            </div>
+          </div>
+        </div>-->
+
+      <div class="skills-photo-wrap fade-up">
+        <img
+          class="main-photo"
+          src="/img/Skills/Me.png"
+          alt="Guillaume Goizet"
+        />
+        <img
+          class="hover-photo"
+          src="/img/Skills/MeHover.png"
+          alt="Guillaume Goizet"
+        />
+        <div class="hover-hint">
+          <p>Survole moi</p>
+          <img src="/img/Skills/arrow.png" alt="" aria-hidden="true" />
+        </div>
+      </div>
+    </section>
+
+    <!-- RÉALISATIONS -->
+    <section class="projects" id="realisations">
+      <div class="fade-up">
+        <span class="section-label section-label-white">Mes Réalisations</span>
+        <span class="section-line section-line-white"></span>
+      </div>
+      <p class="projects-sub-one fade-up">Projets en vedette</p>
+      <p class="projects-sub-two fade-up">
+        Une sélection de mes travaux récents et de mes projets personnels.
+      </p>
+
+      <div class="projects-grid fade-up">
+        <div class="project-card">
+          <img
+            class="thumb"
+            src="/img/Projects/calculator_screenshot.png"
+            alt="Mortgage loan calculator"
+          />
+          <div class="project-info">
+            <h3>Calculateur de prêts immobilier</h3>
+            <span class="filters formation">Formation</span>
+            <span class="filters integration">Intégration web</span><br />
+            <span class="filters javascript">JavaScript</span>
+            <span class="filters html">Html</span>
+            <span class="filters css">Css</span>
+            <p>
+              Création d'une calculatrice moderne et intuitive pour simuler les
+              mensualités et générer le tableau d'amortissement complet d'un
+              prêt immobilier
+            </p>
+            <a
+              href="https://github.com/GuillaumeGOIZET/Calculator"
+              class="project-link"
+              target="_blank"
+              >Voir Projet →</a
+            >
+          </div>
+        </div>
+        <div class="project-card">
+          <img
+            class="thumb"
+            src="/img/Projects/Moodboard_GreenBite.png"
+            alt="GreenBite"
+          />
+          <div class="project-info">
+            <h3>GreenBite</h3>
+            <span class="filters formation">Formation</span>
+            <span class="filters design">Design</span>
+            <p>
+              Réalisation d'une identité visuelle pour une marque de plats
+              préparés vegan, contenant, logos, charte graphique, mockups, kit
+              de communication (en-tête de lettre, carte de visite)
+            </p>
+            <a
+              href="/Moodboard_GreenBite.pdf"
+              class="project-link"
+              target="_blank"
+              >Voir Projet →</a
+            >
+          </div>
+        </div>
+        <div class="project-card">
+          <img
+            class="thumb"
+            src="/img/Projects/logo-smub.png"
+            alt="Smub | GameJam"
+          />
+          <div class="project-info">
+            <h3>Smub | 🏆 Lauréat du Prix "Coup de Cœur du Jury" National</h3>
+            <span class="filters formation">Formation</span>
+            <span class="filters godot">Godot</span>
+            <span class="filters backend">Backend</span><br />
+            <span class="filters design">Design</span>
+            <span class="filters marketing">Marketing</span>
+            <p>
+              Création d'un jeu vidéo en 1 semaine sur le thème de la
+              température dans le cadre d'une GameJam organisé par
+              MyDigitalSchool
+            </p>
+            <a
+              href="https://smuub.itch.io/smub"
+              target="_blank"
+              class="project-link"
+              >Tester le Jeu</a
+            >
+            <a
+              href="https://www.linkedin.com/feed/update/urn:li:activity:7431675680519602176/"
+              target="_blank"
+              class="project-link"
+              >| Plus d'infos</a
+            >
+          </div>
+        </div>
+        <div class="project-card">
+          <img class="thumb" src="/img/Projects/barambe.png" alt="Bar'ambe" />
+          <div class="project-info">
+            <h3>Bar'ambe</h3>
+            <span class="filters formation">Formation</span>
+            <span class="filters integration">Intégration web</span>
+            <span class="filters javascript">JavaScript</span><br />
+            <span class="filters html">Html</span>
+            <span class="filters css">Css</span>
+            <span class="filters marketing">Marketing</span>
+            <p>
+              Brainstorming d'un business et réalisation de tout l'aspect <br />
+              marketing et visuel
+            </p>
+            <a
+              href="https://barambe.netlify.app/"
+              class="project-link"
+              target="_blank"
+              >Voir Site web</a
+            >
+            <a
+              href="/Dossier Créative Lab - Barambe 1.pdf"
+              class="project-link"
+              target="_blank"
+              >| Voir Dossier</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!--<div class="projects-more fade-up">
+    <a href="#">Swipe to explore more projects</a>
+  </div>-->
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="fade-up">
+        <span class="section-label section-label-dark">Contact</span>
+        <span
+          class="section-line section-line-dark"
+          style="width: 205px"
+        ></span>
+      </div>
+
+      <img
+        class="contact-sticker"
+        src="/img/Contact/avatar-form.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <div class="contact-heading fade-up">
+        <span class="main">Vous avez des questions ? </span>
+        <span class="accent">Contactez moi</span>
+      </div>
+
+      <div class="contact-email fade-up">
+        <div class="email-inner">
+          <a href="mailto:guillaumegoizet.contact@gmail.com">
+            GUILLAUMEGOIZET.CONTACT@GMAIL.COM
+          </a>
+          <div class="email-line"></div>
+        </div>
+      </div>
+
+      <p class="contact-or fade-up">ou</p>
+      <p class="contact-sub fade-up">laissez moi un message</p>
+
+      <form
+        class="contact-form fade-up"
+        action="https://formspree.io/f/xpqojnbq"
+        method="POST"
+        onsubmit="handleSubmit(event)"
+      >
+        <div class="form-row">
+          <div class="form-field">
+            <input
+              type="text"
+              placeholder="NOM"
+              name="nom"
+              autocomplete="name"
+            />
+          </div>
+          <div class="form-field">
+            <input
+              type="email"
+              placeholder="EMAIL"
+              name="email"
+              autocomplete="email"
+            />
+          </div>
+        </div>
+        <div class="form-field">
+          <textarea placeholder="MESSAGE" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn-send">Envoyer</button>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-copy">
+        <i class="copy-sym">©</i>
+        Guillaume Goizet 2026
+      </div>
+      <div class="footer-links">
+        <a
+          href="https://eduservices.grimp.io/share?profile=kCNetyWnjxm8"
+          target="_blank"
+          rel="noopener"
+          >Grimp</a
+        >
+        <a href="/CV_GuillaumeGoizet.pdf" target="_blank" rel="noopener">CV</a>
+        <a
+          href="https://github.com/GuillaumeGOIZET"
+          target="_blank"
+          rel="noopener"
+          >Github</a
+        >
+        <a
+          href="https://www.linkedin.com/in/guillaume-goizet-2b29b0298/"
+          target="_blank"
+          rel="noopener"
+          >Linkedin</a
+        >
+        <a href="mailto:guillaumegoizet.contact@gmail.com">Mail</a>
+      </div>
+    </footer>
+
+    <script>
+      // Scroll fade-in
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".fade-up").forEach((el) => obs.observe(el));
+
+      // Active nav link
+      const sections = document.querySelectorAll("section[id]");
+      const links = document.querySelectorAll("nav a");
+      window.addEventListener(
+        "scroll",
+        () => {
+          let cur = "";
+          sections.forEach((s) => {
+            if (scrollY >= s.offsetTop - 120) cur = s.id;
+          });
+          links.forEach((a) => {
+            a.classList.toggle("active", a.getAttribute("href") === "#" + cur);
+          });
+        },
+        { passive: true },
+      );
+
+      // Form submit
+      async function handleSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector(".btn-send");
+        const form = e.target;
+        const data = new FormData(form);
+
+        btn.textContent = "Envoi en cours...";
+        btn.disabled = true;
+
+        try {
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: { Accept: "application/json" },
+          });
+
+          if (res.ok) {
+            btn.textContent = "Envoyé ✓";
+            btn.style.background = "#3b6195";
+            form.reset();
+          } else {
+            btn.textContent = "Erreur, réessaie";
+            btn.style.background = "#c0392b";
+          }
+        } catch {
+          btn.textContent = "Erreur réseau";
+          btn.style.background = "#c0392b";
+        } finally {
+          btn.disabled = false;
+          setTimeout(() => {
+            btn.textContent = "Envoyer";
+            btn.style.background = "";
+          }, 4000);
+        }
+      }
+
+      // ── PARALLAX WATERMARK ──────────────────────────
+      const watermark = document.querySelector(".hero");
+
+      function updateParallax() {
+        // Le watermark monte 2x moins vite que le scroll → effet de profondeur
+        const offset = window.scrollY * 0.45;
+        watermark.style.transform = `translateY(-${offset}px)`;
+      }
+
+      window.addEventListener("scroll", updateParallax, { passive: true });
+      updateParallax();
+
+      // ── SCROLL TO TOP ──────────────────────────
+      const btn = document.getElementById("scrollTopBtn");
+
+      // Afficher le bouton après scroll
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          btn.classList.add("show");
+        } else {
+          btn.classList.remove("show");
+        }
+      });
+
+      // Scroll smooth vers le haut
+      btn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>

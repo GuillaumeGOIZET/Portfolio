@@ -1,0 +1,1298 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #3b6195;
+  --blue-light: #a5b6c8;
+  --dark: #070709;
+  --text: #202328;
+  --white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--white);
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  margin: 0; /* Ajoute cette ligne pour enlever la marge */
+  padding: 0; /* Si tu veux aussi supprimer les espacements internes */
+  max-width: 100%; /* Assure-toi que la largeur est à 100% */
+  width: 100%; /* Pour que le body prenne toute la largeur */
+}
+
+/* ── SCROLL TO TOP ─────────────────────────────── */
+#scrollTopBtn {
+  position: fixed;
+  z-index: 999;
+  bottom: 30px;
+  right: 30px;
+  padding: 14px 22px;
+  font-size: 26px;
+  border: none;
+  border-radius: 50%;
+  background-color: #000;
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+  transform: translateY(20px);
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#scrollTopBtn:hover {
+  background-color: #555;
+}
+
+/* ── NAVBAR ─────────────────────────────── */
+header {
+  position: fixed;
+  top: 21px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 50px;
+  background: rgba(232, 229, 228, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 25px;
+  padding: 3px 3px 3px 3px;
+  white-space: nowrap;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: var(--text);
+  text-decoration: none;
+  padding: 0 18px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  transition: background 0.2s;
+}
+nav a:hover {
+  background: rgba(255, 255, 255, 0.55);
+}
+nav a.active {
+  background: var(--white);
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+.lang-flag {
+  font-size: 18px;
+}
+.lang-caret {
+  width: 10px;
+  height: 10px;
+  opacity: 0.6;
+}
+
+/* ── HERO ────────────────────────────────── */
+/*.hero {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 1013px;
+  overflow: hidden;
+  background: var(--white);
+  justify-content: center;
+  align-items: center;
+}*/
+
+.hero {
+  position: sticky; /* ← clé de tout */
+  top: 0; /* ← se colle en haut du viewport */
+  z-index: 0; /* ← toutes les sections suivantes passeront dessus */
+  width: 100%;
+  height: 100vh;
+  overflow: visible; /* ← permet au watermark de déborder vers le bas */
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*.hero-watermark {
+  position: absolute;
+  bottom: 20px;
+  left: -40px;
+  font-family: "Luxurious Script", cursive;
+  font-size: min(30vw, 420px);
+  color: var(--blue);
+  opacity: 0.18;
+  white-space: nowrap;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}*/
+
+.hero-watermark {
+  position: absolute; /* ← redevient absolute dans le hero */
+  bottom: -170px; /* ← déborde sous le hero */
+  left: -40px;
+  font-family: "Luxurious Script", cursive;
+  font-size: 670px;
+  color: var(--blue);
+  opacity: 0.18;
+  white-space: nowrap;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  will-change: transform; /* ← pour le parallax JS */
+}
+
+.photo-card {
+  position: absolute;
+  z-index: 3;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-center {
+  left: 637px;
+  top: 127px;
+  width: 366px;
+  height: 650px;
+  /* box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.25); */
+  z-index: 2;
+  /* animation: float 4s ease-in-out infinite; */
+}
+
+/* @keyframes float { 
+  0%,
+  100% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(-60px);
+  }
+}*/
+
+.photo-right {
+  left: 1027px;
+  top: 189px;
+  width: 296px;
+  height: 525px;
+  z-index: 1;
+}
+/*.photo-right::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 40%
+  );
+}*/
+
+.photo-left {
+  left: 317px;
+  top: 189px;
+  width: 296px;
+  height: 525px;
+  z-index: 1;
+}
+/*.photo-left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 40%
+  );
+}*/
+
+.name-tag {
+  position: absolute;
+  font-family: "Luxurious Script", cursive;
+  font-size: 50px;
+  color: var(--text);
+  white-space: nowrap;
+  z-index: 4;
+  line-height: 1;
+}
+.name-guillaume {
+  left: 398px;
+  top: 172px;
+  transform: rotate(8deg);
+}
+.name-goizet {
+  left: 1129px;
+  top: 172px;
+  transform: rotate(-8deg);
+}
+
+/* ── À PROPOS ────────────────────────────── */
+.about {
+  position: relative;
+  z-index: 2;
+  background: var(--dark);
+  border-radius: 36px 36px 0 0;
+  min-height: 898px;
+  padding: 30px 33px 80px;
+  overflow: hidden;
+}
+
+.section-label {
+  font-family: "Luxurious Script", cursive;
+  font-size: 24px;
+  display: inline-block;
+}
+.section-label-white {
+  color: var(--white);
+}
+.section-label-dark {
+  color: var(--text);
+}
+
+.section-line {
+  height: 1px;
+  display: inline-block;
+  width: 142px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.section-line-white {
+  background: rgba(255, 255, 255, 0.45);
+}
+.section-line-dark {
+  background: var(--text);
+}
+
+.about-body-wrap {
+  display: flex;
+  gap: 400px;
+  align-items: flex-start;
+  margin-top: 90px;
+  padding: 150px 95px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.35;
+  margin-bottom: 28px;
+}
+.about-title .hl {
+  color: var(--blue);
+}
+
+.about-desc {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.65;
+}
+.about-desc .hl {
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.about-avatar {
+  position: relative;
+  flex-shrink: 0;
+  width: 380px;
+}
+
+.avatar-blob {
+  position: absolute;
+  top: -24px;
+  left: -90px;
+  width: 470px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/*.avatar-photo { 
+  position: relative;
+  z-index: 1;
+  width: 372px;
+  height: 409px;
+  border-radius: 36px 36px 0 0;
+  overflow: hidden;
+  margin-left: 20px;
+}
+.avatar-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}*/
+
+/* ── COMPÉTENCES ────────────────────────── */
+.skills {
+  background: var(--white);
+  padding: 40px 33px 0px;
+  position: relative;
+  z-index: 2;
+}
+
+/*.skills-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-top: 30px;
+  position: relative;
+}
+
+.skills-left {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 50px;
+}
+
+.skill-card {
+  background: var(--dark);
+  border-radius: 14px;
+  padding: 18px 22px;
+  color: var(--white);
+  transition:
+    background 0.25s,
+    transform 0.25s;
+  cursor: default;
+}
+.skill-card:hover {
+  background: var(--blue);
+  transform: translateY(-4px);
+}
+.skill-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.skill-card p {
+  font-size: 13px;
+  opacity: 0.7;
+  line-height: 1.5;
+}*/
+
+.skills-photo-wrap {
+  position: relative;
+  width: 422px;
+  flex-shrink: 0;
+  margin: 40px auto 0;
+}
+.skills-photo-wrap img {
+  width: 100%;
+  display: block;
+  pointer-events: none;
+}
+.skills-photo-wrap img.main-photo {
+  width: 100%;
+  height: 750px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+.hover-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+/* au hover */
+.skills-photo-wrap:hover .hover-photo {
+  opacity: 1;
+}
+
+.skills-photo-wrap:hover .main-photo {
+  opacity: 0;
+}
+
+.hover-hint {
+  position: absolute;
+  top: 40px;
+  left: calc(80% + 20px);
+  white-space: nowrap;
+}
+.hover-hint p {
+  position: absolute;
+  top: 20px;
+  left: 130px;
+  font-size: 26px;
+  color: var(--text);
+  white-space: nowrap;
+}
+.hover-hint img {
+  position: absolute;
+  width: 188px;
+  margin-top: 8px;
+  top: 60px;
+  left: calc(100% + 20px);
+}
+
+/* ── RÉALISATIONS ───────────────────────── */
+.projects {
+  background: var(--blue);
+  z-index: 2;
+  padding: 40px 33px 80px;
+}
+
+.projects-sub-one {
+  font-size: 26px;
+  color: #fff;
+  margin: 12px 0 32px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.projects-sub-two {
+  font-size: 20px;
+  color: #e1e1e1;
+  margin: 12px 0 32px;
+  text-align: center;
+}
+
+.projects-grid {
+  width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding: 40px 0px 0px;
+}
+
+.project-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f5f5f5;
+  cursor: pointer;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+.project-card img.thumb {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+.project-info {
+  padding: 18px 20px;
+}
+.project-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.filters {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin-bottom: 45px;
+}
+.formation {
+  background-color: #02A3EC;
+}
+.integration {
+  background-color: #E51580;
+}
+.javascript {
+  background-color: #EFE058;
+  color: black;
+}
+.html {
+  background-color: #D56C3C;
+}
+.css {
+  background-color: #4967E8;
+}
+.design {
+  background-color: #f2c618;
+}
+.godot {
+  background-color: #001265;
+}
+.backend {
+  background-color: #37A739;
+}
+.marketing {
+  background-color: #784C5A;
+}
+.project-info p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-top: 6;
+  margin-bottom: 14px;
+}
+.project-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--blue);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+}
+.project-link:hover {
+  gap: 10px;
+}
+
+.projects-more {
+  text-align: center;
+  margin-top: 36px;
+}
+.projects-more a {
+  font-size: 16px;
+  color: #888;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2px;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+.projects-more a:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+/* ── CONTACT ────────────────────────────── */
+.contact {
+  padding: 40px 33px 60px;
+  z-index: 2;
+  position: relative;
+}
+
+.contact-heading {
+  text-align: center;
+  margin: 60px 0 36px;
+  line-height: 1.2;
+}
+.contact-heading .main {
+  font-family: "Luxurious Script", cursive;
+  font-size: 48px;
+  color: var(--text);
+}
+.contact-heading .accent {
+  font-family: "Luxurious Script", cursive;
+  font-size: 48px;
+  color: var(--blue-light);
+}
+
+.contact-email {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.email-inner {
+  display: inline-block;
+}
+.email-inner a {
+  font-size: clamp(18px, 2.5vw, 36px);
+  color: var(--text);
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  display: block;
+}
+.email-line {
+  height: 2px;
+  background: var(--text);
+  margin-top: 4px;
+}
+
+.contact-or {
+  text-align: center;
+  font-size: 26px;
+  color: var(--text);
+  margin: 22px 0 4px;
+}
+.contact-sub {
+  text-align: center;
+  font-size: 26px;
+  color: var(--text);
+  margin-bottom: 32px;
+}
+
+.contact-sticker {
+  position: absolute;
+  right: 500px;
+  top: 305px;
+  width: 101px;
+  pointer-events: none;
+}
+
+.contact-form {
+  max-width: 733px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+.form-field {
+  flex: 1;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  border: 2px solid var(--text);
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: var(--text);
+  padding: 10px 16px;
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+  display: block;
+}
+.form-field input {
+  height: 47px;
+}
+.form-field textarea {
+  height: 273px;
+  padding-top: 14px;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(32, 35, 40, 0.45);
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--blue);
+}
+
+.btn-send {
+  align-self: center;
+  margin-top: 8px;
+  background: var(--text);
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 25px;
+  padding: 14px 48px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+}
+.btn-send:hover {
+  background: var(--blue);
+  transform: scale(1.04);
+}
+
+/* ── FOOTER ─────────────────────────────── */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  padding: 18px 22px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.footer-copy {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  color: var(--text);
+}
+.copy-sym {
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--text);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-style: normal;
+}
+.footer-links {
+  display: flex;
+  gap: 32px;
+}
+.footer-links a {
+  font-size: 16px;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: var(--blue);
+}
+
+/* ── SCROLL FADE ─────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* RESPONSIVE */
+/* ───────── GRAND ECRAN (>= 1024px) ───────── */
+@media (min-width: 1647px) {
+  .hero-watermark {
+    font-size: 770px;
+    left: -20px;
+    bottom: -180px;
+  }
+
+  .photo-card {
+    position: absolute;
+    z-index: 3;
+    border-radius: 40px;
+    overflow: hidden;
+  }
+
+  .photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-center {
+    left: 787px;
+    top: 127px;
+    width: 366px;
+    height: 650px;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    /* animation: float 4s ease-in-out infinite; */
+  }
+  .photo-right {
+    left: 1177px;
+    top: 189px;
+    width: 296px;
+    height: 525px;
+    z-index: 1;
+  }
+  .photo-left {
+    left: 467px;
+    top: 189px;
+    width: 296px;
+    height: 525px;
+    z-index: 1;
+  }
+
+  .name-tag {
+    position: absolute;
+    font-family: "Luxurious Script", cursive;
+    font-size: 50px;
+    color: var(--text);
+    white-space: nowrap;
+    z-index: 4;
+    line-height: 1;
+  }
+  .name-guillaume {
+    left: 548px;
+    top: 172px;
+    transform: rotate(8deg);
+  }
+  .name-goizet {
+    left: 1279px;
+    top: 172px;
+    transform: rotate(-8deg);
+  }
+  .contact-sticker {
+    position: absolute;
+    right: 620px;
+    top: 305px;
+    width: 101px;
+    pointer-events: none;
+  }
+}
+/* ── LAPTOP (< 1400px) ────────────────────────────────────── */
+@media (max-width: 1400px) {
+  /* HERO — recentrage relatif à la fenêtre */
+  .hero-watermark {
+    font-size: clamp(200px, 45vw, 620px);
+    bottom: -120px;
+    left: -20px;
+  }
+
+  .photo-center {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 127px;
+    width: 320px;
+    height: 570px;
+  }
+
+  .photo-left {
+    left: calc(50% - 340px);
+    top: 189px;
+    width: 250px;
+    height: 445px;
+  }
+
+  .photo-right {
+    left: calc(50% + 90px);
+    top: 189px;
+    width: 250px;
+    height: 445px;
+  }
+
+  .name-guillaume {
+    left: calc(50% - 340px);
+    top: 172px;
+  }
+
+  .name-goizet {
+    left: calc(50% + 100px);
+    top: 172px;
+  }
+
+  /* ABOUT */
+  .about-body-wrap {
+    gap: 100px;
+    padding: 80px 60px;
+  }
+
+  /* SKILLS */
+  .hover-hint {
+    left: calc(100% + 16px);
+  }
+
+  /* CONTACT */
+  .contact-sticker {
+    right: 300px;
+  }
+}
+
+/* ── TABLET (< 1024px) ────────────────────────────────────── */
+@media (max-width: 1024px) {
+  /* NAVBAR */
+  header {
+    width: calc(100% - 32px);
+    max-width: 700px;
+  }
+
+  nav a {
+    padding: 0 14px;
+    font-size: 15px;
+  }
+
+  /* HERO */
+  .hero {
+    height: 100svh; /* safe-area mobile */
+  }
+
+  .hero-watermark {
+    font-size: clamp(160px, 38vw, 440px);
+    bottom: -80px;
+    left: -15px;
+  }
+
+  .photo-center {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 140px;
+    width: 270px;
+    height: 480px;
+  }
+
+  .photo-left {
+    left: calc(50% - 285px);
+    top: 190px;
+    width: 210px;
+    height: 375px;
+  }
+
+  .photo-right {
+    left: calc(50% + 75px);
+    top: 190px;
+    width: 210px;
+    height: 375px;
+  }
+
+  .name-guillaume {
+    left: calc(50% - 290px);
+    top: 175px;
+    font-size: 40px;
+  }
+
+  .name-goizet {
+    left: calc(50% + 80px);
+    top: 175px;
+    font-size: 40px;
+  }
+
+  /* ABOUT */
+  .about-body-wrap {
+    flex-direction: column;
+    gap: 60px;
+    padding: 60px 40px;
+    margin-top: 40px;
+  }
+
+  .about-title {
+    font-size: 22px;
+  }
+  .about-desc {
+    font-size: 17px;
+  }
+
+  .about-avatar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    min-height: 300px;
+  }
+
+  .avatar-blob {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: min(400px, 80vw);
+  }
+
+  /* SKILLS — photo centrée, hint caché */
+  .skills {
+    padding: 40px 33px 60px;
+    align-items: center;
+  }
+
+  .skills-photo-wrap {
+    width: min(320px, 70vw);
+  }
+
+  .skills-photo-wrap img.main-photo {
+    height: auto;
+    min-height: 400px;
+  }
+
+  .hover-photo {
+    height: auto;
+    min-height: 400px;
+    /* Sur touch, afficher directement le hover */
+    opacity: 1;
+  }
+
+  .skills-photo-wrap .main-photo {
+    opacity: 0;
+  }
+
+  .hover-hint {
+    display: none;
+  } /* pas de "Survole moi" sur touch */
+
+  /* PROJECTS */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+  }
+
+  /* CONTACT */
+  .contact-sticker {
+    display: none;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .email-inner a {
+    font-size: clamp(14px, 3vw, 28px);
+  }
+}
+
+/* ── MOBILE (< 768px) ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* NAVBAR — plus petit, sans overflow */
+  header {
+    top: 10px;
+    height: auto;
+    padding: 6px 8px;
+    width: calc(100% - 24px);
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  nav a {
+    font-size: 13px;
+    padding: 6px 10px;
+    height: 36px;
+  }
+
+  /* HERO */
+  .hero {
+    height: 100svh;
+    min-height: 580px;
+    overflow: hidden;
+  }
+
+  .hero-watermark {
+    font-size: clamp(130px, 60vw, 340px);
+    bottom: -60px;
+    left: -10px;
+  }
+
+  /* Sur mobile : seulement la photo centrale */
+  .photo-left,
+  .photo-right {
+    display: none;
+  }
+
+  .photo-center {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 130px;
+    width: clamp(180px, 55vw, 280px);
+    height: clamp(320px, 60vh, 500px);
+  }
+
+  .name-tag {
+    font-size: clamp(28px, 7vw, 44px);
+  }
+
+  .name-guillaume {
+    left: clamp(10px, 5vw, 80px);
+    top: 115px;
+    transform: rotate(8deg);
+  }
+
+  .name-goizet {
+    /* à droite de la photo centrale */
+    left: auto;
+    right: clamp(10px, 5vw, 80px);
+    top: 115px;
+    transform: rotate(-8deg);
+  }
+
+  /* ABOUT */
+  .about {
+    border-radius: 24px 24px 0 0;
+    padding: 24px 20px 60px;
+  }
+
+  .about-body-wrap {
+    padding: 40px 0;
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  .about-title {
+    font-size: 20px;
+  }
+  .about-desc {
+    font-size: 16px;
+  }
+
+  .avatar-blob {
+    width: min(400px, 85vw);
+  }
+
+  /* SKILLS */
+  .skills {
+    padding: 32px 20px 48px;
+  }
+
+  .skills-photo-wrap {
+    width: min(260px, 75vw);
+    margin-top: 24px;
+  }
+
+  /* PROJECTS */
+  .projects {
+    padding: 32px 20px 60px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .projects-sub-one {
+    font-size: 22px;
+  }
+  .projects-sub-two {
+    font-size: 16px;
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 32px 20px 48px;
+  }
+
+  .contact-heading .main,
+  .contact-heading .accent {
+    font-size: clamp(28px, 7vw, 42px);
+  }
+
+  .contact-or,
+  .contact-sub {
+    font-size: 20px;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    font-size: 16px;
+  }
+
+  /* FOOTER */
+  footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .footer-links {
+    gap: 20px;
+  }
+
+  /* SCROLL TO TOP */
+  #scrollTopBtn {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 16px;
+    font-size: 20px;
+  }
+}
+
+/* ── PETIT MOBILE (< 480px) ───────────────────────────────── */
+@media (max-width: 480px) {
+  /* NAVBAR */
+  nav a {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  /* HERO */
+  .hero-watermark {
+    font-size: clamp(100px, 55vw, 180px);
+    bottom: -20px;
+  }
+
+  .photo-center {
+    width: clamp(150px, 58vw, 220px);
+    height: clamp(260px, 55vh, 400px);
+    top: 120px;
+  }
+
+  .name-tag {
+    font-size: clamp(22px, 6vw, 32px);
+  }
+
+  .name-guillaume {
+    left: clamp(4px, 2vw, 20px);
+    top: 108px;
+  }
+
+  .name-goizet {
+    right: clamp(4px, 2vw, 20px);
+    top: 108px;
+  }
+
+  /* ABOUT */
+  .about-title {
+    font-size: 18px;
+  }
+  .about-desc {
+    font-size: 15px;
+  }
+
+  /* CONTACT */
+  .contact-heading .main,
+  .contact-heading .accent {
+    font-size: clamp(24px, 8vw, 34px);
+  }
+
+  .email-inner a {
+    font-size: clamp(11px, 3.5vw, 18px);
+  }
+
+  /* FOOTER */
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
