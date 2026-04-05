@@ -24,10 +24,10 @@ body {
   color: var(--text);
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  margin: 0; /* Ajoute cette ligne pour enlever la marge */
-  padding: 0; /* Si tu veux aussi supprimer les espacements internes */
-  max-width: 100%; /* Assure-toi que la largeur est à 100% */
-  width: 100%; /* Pour que le body prenne toute la largeur */
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  width: 100%;
 }
 
 /* ── SCROLL TO TOP ─────────────────────────────── */
@@ -62,6 +62,11 @@ body {
 }
 
 /* ── NAVBAR ─────────────────────────────── */
+/*header {
+  display: flex;
+  flex-direction: row;
+}*/
+
 header {
   position: fixed;
   top: 21px;
@@ -104,7 +109,29 @@ nav a.active {
   background: var(--white);
 }
 
-.lang-btn {
+.languages {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 1450px;
+  top: 35px;
+  z-index: 300;
+  gap: 2px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.languages a {
+  text-decoration: none;
+}
+
+.languages a:hover {
+  color: var(--blue);
+}
+
+/*.lang-btn {
   display: flex;
   align-items: center;
   gap: 3px;
@@ -120,7 +147,7 @@ nav a.active {
   width: 10px;
   height: 10px;
   opacity: 0.6;
-}
+}*/
 
 /* ── HERO ────────────────────────────────── */
 /*.hero {
@@ -554,20 +581,20 @@ nav a.active {
   margin-bottom: 45px;
 }
 .formation {
-  background-color: #02A3EC;
+  background-color: #02a3ec;
 }
 .integration {
-  background-color: #E51580;
+  background-color: #e51580;
 }
 .javascript {
-  background-color: #EFE058;
+  background-color: #efe058;
   color: black;
 }
 .html {
-  background-color: #D56C3C;
+  background-color: #d56c3c;
 }
 .css {
-  background-color: #4967E8;
+  background-color: #4967e8;
 }
 .design {
   background-color: #f2c618;
@@ -576,10 +603,10 @@ nav a.active {
   background-color: #001265;
 }
 .backend {
-  background-color: #37A739;
+  background-color: #37a739;
 }
 .marketing {
-  background-color: #784C5A;
+  background-color: #784c5a;
 }
 .project-info p {
   font-size: 14px;
@@ -659,6 +686,9 @@ nav a.active {
   font-weight: 400;
   letter-spacing: -0.3px;
   display: block;
+}
+.email-inner a:hover {
+  color: var(--blue);
 }
 .email-line {
   height: 2px;
@@ -884,9 +914,23 @@ footer {
 }
 /* ── LAPTOP (< 1400px) ────────────────────────────────────── */
 @media (max-width: 1400px) {
+.languages {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 1000px;
+  top: 35px;
+  z-index: 300;
+  gap: 2px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text);
+}
+
   /* HERO — recentrage relatif à la fenêtre */
   .hero-watermark {
-    font-size: clamp(200px, 45vw, 620px);
+    font-size: clamp(200px, 40vw, 560px);
     bottom: -120px;
     left: -20px;
   }
@@ -914,13 +958,13 @@ footer {
   }
 
   .name-guillaume {
-    left: calc(50% - 340px);
-    top: 172px;
+    left: calc(50% - 300px);
+    top: 168px;
   }
 
   .name-goizet {
-    left: calc(50% + 100px);
-    top: 172px;
+    left: calc(50% + 200px);
+    top: 165px;
   }
 
   /* ABOUT */
@@ -934,6 +978,24 @@ footer {
     left: calc(100% + 16px);
   }
 
+    /* PROJECTS */
+  .projects {
+    padding: 32px 20px 60px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 85%;
+  }
+
+  .projects-sub-one {
+    font-size: 22px;
+  }
+  .projects-sub-two {
+    font-size: 16px;
+  }
+
   /* CONTACT */
   .contact-sticker {
     right: 300px;
@@ -944,7 +1006,7 @@ footer {
 @media (max-width: 1024px) {
   /* NAVBAR */
   header {
-    width: calc(100% - 32px);
+    width: calc(62% - 2px);
     max-width: 700px;
   }
 
@@ -953,13 +1015,17 @@ footer {
     font-size: 15px;
   }
 
+    .languages {
+    display: none;
+  }
+
   /* HERO */
   .hero {
     height: 100svh; /* safe-area mobile */
   }
 
   .hero-watermark {
-    font-size: clamp(160px, 38vw, 440px);
+    font-size: clamp(160px, 40vw, 440px);
     bottom: -80px;
     left: -15px;
   }
@@ -987,13 +1053,13 @@ footer {
   }
 
   .name-guillaume {
-    left: calc(50% - 290px);
+    left: calc(50% - 250px);
     top: 175px;
     font-size: 40px;
   }
 
   .name-goizet {
-    left: calc(50% + 80px);
+    left: calc(50% + 160px);
     top: 175px;
     font-size: 40px;
   }
@@ -1086,7 +1152,7 @@ footer {
     top: 10px;
     height: auto;
     padding: 6px 8px;
-    width: calc(100% - 24px);
+    width: calc(60% - 24px);
   }
 
   nav {
@@ -1101,6 +1167,10 @@ footer {
     height: 36px;
   }
 
+    .languages {
+    display: none;
+  }
+
   /* HERO */
   .hero {
     height: 100svh;
@@ -1109,7 +1179,7 @@ footer {
   }
 
   .hero-watermark {
-    font-size: clamp(130px, 60vw, 340px);
+    font-size: clamp(130px, 40vw, 340px);
     bottom: -60px;
     left: -10px;
   }
@@ -1130,6 +1200,7 @@ footer {
 
   .name-tag {
     font-size: clamp(28px, 7vw, 44px);
+    display: none;
   }
 
   .name-guillaume {
@@ -1246,6 +1317,9 @@ footer {
     padding: 5px 8px;
   }
 
+  .languages {
+    display: none;
+  }
   /* HERO */
   .hero-watermark {
     font-size: clamp(100px, 55vw, 180px);
