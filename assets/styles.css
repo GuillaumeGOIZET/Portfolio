@@ -914,19 +914,19 @@ footer {
 }
 /* ── LAPTOP (< 1400px) ────────────────────────────────────── */
 @media (max-width: 1400px) {
-.languages {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  left: 1000px;
-  top: 35px;
-  z-index: 300;
-  gap: 2px;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--text);
-}
+  .languages {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 1000px;
+    top: 35px;
+    z-index: 300;
+    gap: 2px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text);
+  }
 
   /* HERO — recentrage relatif à la fenêtre */
   .hero-watermark {
@@ -978,7 +978,7 @@ footer {
     left: calc(100% + 16px);
   }
 
-    /* PROJECTS */
+  /* PROJECTS */
   .projects {
     padding: 32px 20px 60px;
   }
@@ -1015,7 +1015,7 @@ footer {
     font-size: 15px;
   }
 
-    .languages {
+  .languages {
     display: none;
   }
 
@@ -1167,7 +1167,7 @@ footer {
     height: 36px;
   }
 
-    .languages {
+  .languages {
     display: none;
   }
 
@@ -1311,6 +1311,12 @@ footer {
 
 /* ── PETIT MOBILE (< 480px) ───────────────────────────────── */
 @media (max-width: 480px) {
+  header {
+    top: 10px;
+    height: auto;
+    padding: 6px 8px;
+    width: calc(80% - 24px);
+  }
   /* NAVBAR */
   nav a {
     font-size: 12px;
