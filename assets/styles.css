@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 1920px;
 }
 body {
   background: var(--white);
@@ -125,6 +126,7 @@ nav a.active {
 
 .languages a {
   text-decoration: none;
+  color: var(--text);
 }
 
 .languages a:hover {
@@ -839,12 +841,26 @@ footer {
 }
 
 /* RESPONSIVE */
-/* ───────── GRAND ECRAN (>= 1024px) ───────── */
-@media (min-width: 1647px) {
+/* ───────── GRAND ECRAN (< 1920px) ───────── */
+@media (max-width: 1920px) {
   .hero-watermark {
-    font-size: 770px;
+    font-size: 670px;
     left: -20px;
     bottom: -180px;
+  }
+
+  .languages {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 1300px;
+    top: 35px;
+    z-index: 300;
+    gap: 2px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text);
   }
 
   .photo-card {
@@ -862,23 +878,22 @@ footer {
   }
 
   .photo-center {
-    left: 787px;
+    left: 637px;
     top: 127px;
     width: 366px;
     height: 650px;
-    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.25);
     z-index: 2;
     /* animation: float 4s ease-in-out infinite; */
   }
   .photo-right {
-    left: 1177px;
+    left: 1027px;
     top: 189px;
     width: 296px;
     height: 525px;
     z-index: 1;
   }
   .photo-left {
-    left: 467px;
+    left: 317px;
     top: 189px;
     width: 296px;
     height: 525px;
@@ -895,12 +910,12 @@ footer {
     line-height: 1;
   }
   .name-guillaume {
-    left: 548px;
+    left: 398px;
     top: 172px;
     transform: rotate(8deg);
   }
   .name-goizet {
-    left: 1279px;
+    left: 1129px;
     top: 172px;
     transform: rotate(-8deg);
   }
@@ -1016,7 +1031,17 @@ footer {
   }
 
   .languages {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 700px;
+    top: 35px;
+    z-index: 300;
+    gap: 2px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text);
   }
 
   /* HERO */
@@ -1168,7 +1193,17 @@ footer {
   }
 
   .languages {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 400px;
+    top: 65px;
+    z-index: 300;
+    gap: 2px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text);
   }
 
   /* HERO */
@@ -1324,7 +1359,17 @@ footer {
   }
 
   .languages {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 280px;
+    top: 65px;
+    z-index: 300;
+    gap: 2px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text);
   }
   /* HERO */
   .hero-watermark {
