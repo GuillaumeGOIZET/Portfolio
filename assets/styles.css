@@ -841,10 +841,10 @@ footer {
 }
 
 /* RESPONSIVE */
-/* ───────── GRAND ECRAN (< 1920px) ───────── */
-@media (max-width: 1920px) {
+/* ───────── GRAND ECRAN (> 1400px) ───────── */
+@media (min-width: 1400px) {
   .hero-watermark {
-    font-size: 770px;
+    font-size: 670px;
     left: -20px;
     bottom: -180px;
   }
@@ -878,7 +878,7 @@ footer {
   }
 
   .photo-center {
-    left: 737px;
+    left: 637px;
     top: 127px;
     width: 366px;
     height: 650px;
@@ -886,14 +886,14 @@ footer {
     /* animation: float 4s ease-in-out infinite; */
   }
   .photo-right {
-    left: 1127px;
+    left: 1027px;
     top: 189px;
     width: 296px;
     height: 525px;
     z-index: 1;
   }
   .photo-left {
-    left: 417px;
+    left: 317px;
     top: 189px;
     width: 296px;
     height: 525px;
@@ -910,18 +910,18 @@ footer {
     line-height: 1;
   }
   .name-guillaume {
-    left: 498px;
+    left: 398px;
     top: 172px;
     transform: rotate(8deg);
   }
   .name-goizet {
-    left: 1229px;
+    left: 1129px;
     top: 172px;
     transform: rotate(-8deg);
   }
   .contact-sticker {
     position: absolute;
-    right: 620px;
+    right: 520px;
     top: 305px;
     width: 101px;
     pointer-events: none;
