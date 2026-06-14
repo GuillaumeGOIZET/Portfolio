@@ -568,6 +568,9 @@ nav a.active {
 .project-info {
   padding: 18px 20px;
 }
+.project-filters {
+  margin-bottom: 12px;
+}
 .project-info h3 {
   font-size: 18px;
   font-weight: 600;
@@ -585,6 +588,9 @@ nav a.active {
 .formation {
   background-color: #02a3ec;
 }
+.entreprise {
+  background-color: #4802ec;
+}
 .integration {
   background-color: #e51580;
 }
@@ -598,6 +604,12 @@ nav a.active {
 .css {
   background-color: #4967e8;
 }
+.php {
+  background-color: #7A7CAF;
+}
+.tailwind {
+  background-color: #78BDF2;
+}
 .design {
   background-color: #f2c618;
 }
@@ -609,6 +621,9 @@ nav a.active {
 }
 .marketing {
   background-color: #784c5a;
+}
+.wordpress {
+  background-color: #467497;
 }
 .project-info p {
   font-size: 14px;
