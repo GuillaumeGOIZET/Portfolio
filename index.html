@@ -16,6 +16,12 @@
     <button id="scrollTopBtn">↑</button>
     <!-- NAVBAR -->
     <header>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <nav>
         <a href="#accueil" class="active">Accueil</a>
         <a href="#apropos">A propos</a>
@@ -70,7 +76,7 @@
           <div class="about-desc">
             <p>
               <span class="hl">Étudiant</span> en
-              <span class="hl">Bachelor</span> Cycle Web et Multimédia, je me
+              <span class="hl">Bachelor</span> Développeur Web, je me
               forme à la création de sites <span class="hl">modernes</span> et
               <span class="hl">performants</span>. J’accorde une attention
               particulière à <span class="hl">l’expérience utilisateur</span>,
@@ -147,7 +153,7 @@
           alt="Guillaume Goizet"
         />
         <div class="hover-hint">
-          <p>Survole moi</p>
+          <p>Découvres mes compétences<br/>en me survolant</p>
           <img src="/img/Skills/arrow.png" alt="" aria-hidden="true" />
         </div>
       </div>
@@ -431,6 +437,10 @@
           >Linkedin</a
         >
         <a href="mailto:guillaumegoizet.contact@gmail.com">Mail</a>
+        <a href="/mentions-legales.html">Mentions légales</a>
+        <a href="/politique-confidentialite.html"
+          >Politique de confidentialité</a
+        >
       </div>
     </footer>
 
@@ -500,13 +510,14 @@
         }
       }
 
-      // ── PARALLAX WATERMARK ──────────────────────────
-      const watermark = document.querySelector(".hero");
+      const watermark = document.querySelector(".hero-watermark");
 
       function updateParallax() {
-        // Le watermark monte 2x moins vite que le scroll → effet de profondeur
         const offset = window.scrollY * 0.45;
-        watermark.style.transform = `translateY(-${offset}px)`;
+
+        if (watermark) {
+          watermark.style.transform = `translateY(-${offset}px)`;
+        }
       }
 
       window.addEventListener("scroll", updateParallax, { passive: true });
@@ -531,6 +542,35 @@
           behavior: "smooth",
         });
       });
+    </script>
+    <script>
+      const burger = document.querySelector(".burger");
+      const header = document.querySelector("header");
+      const menuLinks = document.querySelectorAll("header nav a");
+
+      if (burger && header) {
+        burger.addEventListener("click", () => {
+          const isOpen = header.classList.toggle("menu-open");
+
+          burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+          burger.setAttribute(
+            "aria-label",
+            isOpen ? "Fermer le menu" : "Ouvrir le menu",
+          );
+        });
+
+        // Fermer le menu lorsqu'on clique sur un lien
+        menuLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            header.classList.remove("menu-open");
+
+            burger.setAttribute("aria-expanded", "false");
+
+            burger.setAttribute("aria-label", "Ouvrir le menu");
+          });
+        });
+      }
     </script>
   </body>
 </html>

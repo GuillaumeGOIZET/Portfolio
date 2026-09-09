@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,11 +11,19 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <!-- SCROLL TO TOP -->
     <button id="scrollTopBtn">↑</button>
+
     <!-- NAVBAR -->
     <header>
+      <button class="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <nav>
         <a href="#accueil" class="active">Home</a>
         <a href="#apropos">About</a>
@@ -23,13 +31,8 @@
         <a href="#realisations">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-      <!--<button class="lang-btn" aria-label="Langue">
-    <span class="lang-flag">🇫🇷</span>
-    <svg class="lang-caret" viewBox="0 0 10 6" fill="none">
-      <path d="M1 1L5 5L9 1" stroke="#202328" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>-->
     </header>
+
     <div class="languages">
       <a href="index.html" class="fr">FR</a>
       <p>|</p>
@@ -43,9 +46,11 @@
       <div class="photo-card photo-left">
         <img src="/img/Hero/Picture_Left.png" alt="Guillaume Goizet" />
       </div>
+
       <div class="photo-card photo-center">
         <img src="/img/Hero/Picture_Center.png" alt="Guillaume Goizet" />
       </div>
+
       <div class="photo-card photo-right">
         <img src="/img/Hero/Picture_Right.png" alt="Guillaume" />
       </div>
@@ -54,38 +59,43 @@
       <span class="name-tag name-goizet">Goizet</span>
     </section>
 
-    <!-- À PROPOS -->
+    <!-- ABOUT -->
     <section class="about" id="apropos">
       <div class="fade-up">
-        <span class="section-label section-label-white">About</span>
+        <span class="section-label section-label-white">About Me</span>
         <span class="section-line section-line-white"></span>
       </div>
 
       <div class="about-body-wrap fade-up">
         <div class="about-text">
           <p class="about-title">
-            Guillaume GOIZET, <span class="hl">web developer</span> and
+            Guillaume GOIZET,
+            <span class="hl">web developer</span> and
             <span class="hl">web designer</span>.
           </p>
+
           <div class="about-desc">
             <p>
-              <span class="hl">Bachelor’s student</span> in Web and Multimedia,
-              I am training in the creation of
-              <span class="hl">modern</span> and
-              <span class="hl">high-performance websites</span>. I pay
+              <span class="hl">Student</span> in a
+              <span class="hl">Bachelor's degree</span> in Web Developer, I
+              am training to create <span class="hl">modern</span> and
+              <span class="hl">high-performance</span> websites. I pay
               particular attention to <span class="hl">user experience</span>,
-              <span class="hl">design</span> and code
-              <span class="hl">quality</span>.
+              <span class="hl">design</span> and
+              <span class="hl">code quality</span>.
             </p>
+
             <br />
+
             <p>
               <span class="hl">Curious</span> and
-              <span class="hl">detail-oriented</span> I develop my skills
-              through various projects. My goal is to
-              <span class="hl">design</span> web solutions that are
+              <span class="hl">rigorous</span>, I develop my skills through
+              various projects. My goal is to
+              <span class="hl">design</span>
               <span class="hl">efficient</span>,
-              <span class="hl">visually appealing</span> et
-              <span class="hl">tailored</span> to users’ needs.
+              <span class="hl">aesthetic</span> and
+              <span class="hl">adapted</span> web solutions that meet specific
+              needs.
             </p>
           </div>
         </div>
@@ -97,42 +107,16 @@
             alt=""
             aria-hidden="true"
           />
-          <!-- <div class="avatar-photo"> 
-        <img src="/img/About/Avatar.png"
-             alt="Avatar Guillaume">
-      </div>-->
         </div>
       </div>
     </section>
 
-    <!-- COMPÉTENCES -->
+    <!-- SKILLS -->
     <section class="skills" id="competences">
       <div class="fade-up">
         <span class="section-label section-label-dark">My Skills</span>
         <span class="section-line section-line-dark"></span>
       </div>
-
-      <!--<div class="skills-inner">
-        <div class="skills-left fade-up">
-          <div class="skills-grid">
-            <div class="skill-card">
-              <h3>Frontend</h3>
-              <p>HTML, CSS, JavaScript, React, Vue.js, Tailwind CSS</p>
-            </div>
-            <div class="skill-card">
-              <h3>Backend</h3>
-              <p>Node.js, Express, Python, REST API, GraphQL</p>
-            </div>
-            <div class="skill-card">
-              <h3>Base de données</h3>
-              <p>MongoDB, PostgreSQL, MySQL, Firebase</p>
-            </div>
-            <div class="skill-card">
-              <h3>Outils</h3>
-              <p>Git, Docker, Figma, VS Code, Linux</p>
-            </div>
-          </div>
-        </div>-->
 
       <div class="skills-photo-wrap fade-up">
         <img
@@ -140,143 +124,246 @@
           src="/img/Skills/Me.png"
           alt="Guillaume Goizet"
         />
+
         <img
           class="hover-photo"
           src="/img/Skills/MeHover.png"
           alt="Guillaume Goizet"
         />
+
         <div class="hover-hint">
-          <p>Hover me</p>
+          <p>Discover my skills <br />by hovering over me</p>
           <img src="/img/Skills/arrow.png" alt="" aria-hidden="true" />
         </div>
       </div>
     </section>
 
-    <!-- RÉALISATIONS -->
+    <!-- PROJECTS -->
     <section class="projects" id="realisations">
       <div class="fade-up">
-        <span class="section-label section-label-white">My projects</span>
+        <span class="section-label section-label-white">My Projects</span>
         <span class="section-line section-line-white"></span>
       </div>
+
       <p class="projects-sub-one fade-up">Featured Projects</p>
+
       <p class="projects-sub-two fade-up">
         A selection of my recent work and personal projects.
       </p>
 
       <div class="projects-grid fade-up">
+        <!-- PROJECT 1 -->
         <div class="project-card">
           <img
             class="thumb"
             src="/img/Projects/calculator_screenshot.png"
             alt="Mortgage loan calculator"
           />
+
           <div class="project-info">
             <h3>Mortgage Loan Calculator</h3>
-            <span class="filters formation">Education</span>
-            <span class="filters integration">Web Integration</span><br />
-            <span class="filters javascript">JavaScript</span>
-            <span class="filters html">Html</span>
-            <span class="filters css">Css</span>
+
+            <div class="project-filters">
+              <span class="filters formation">Training</span>
+              <span class="filters integration">Web Integration</span><br />
+              <span class="filters javascript">JavaScript</span>
+              <span class="filters html">HTML</span>
+              <span class="filters css">CSS</span>
+            </div>
+
             <p>
               Creation of a modern and intuitive calculator to simulate monthly
               payments and generate a complete amortization schedule for a
-              mortgage loan
+              mortgage loan.
             </p>
+
             <a
               href="https://github.com/GuillaumeGOIZET/Calculator"
               class="project-link"
               target="_blank"
-              >View Project →</a
             >
+              View Project
+            </a>
           </div>
         </div>
+
+        <!-- PROJECT 2 -->
         <div class="project-card">
           <img
             class="thumb"
             src="/img/Projects/Moodboard_GreenBite.png"
             alt="GreenBite"
           />
+
           <div class="project-info">
             <h3>GreenBite</h3>
-            <span class="filters formation">Education</span>
-            <span class="filters design">Design</span>
+
+            <div class="project-filters">
+              <span class="filters formation">Training</span>
+              <span class="filters design">Design</span>
+            </div>
+
             <p>
               Creation of a visual identity for a vegan ready-made meal brand,
-              including logos, brand guidelines, mockups, and a communication
-              kit (letterhead, business card)
+              including packaging, logos, brand guidelines, mockups and a
+              communication kit (letterhead and business card).
             </p>
+
             <a
               href="/BrandGuideline_GreenBite.pdf"
               class="project-link"
               target="_blank"
-              >View Project →</a
             >
+              View Project
+            </a>
           </div>
         </div>
+
+        <!-- PROJECT 3 -->
         <div class="project-card">
           <img
             class="thumb"
             src="/img/Projects/logo-smub.png"
             alt="Smub | GameJam"
           />
+
           <div class="project-info">
-            <h3>Smub | 🏆 Winner of the “Jury’s Favorite Award” (National)</h3>
-            <span class="filters formation">Education</span>
-            <span class="filters godot">Godot</span>
-            <span class="filters backend">Backend</span><br />
-            <span class="filters design">Design</span>
-            <span class="filters marketing">Marketing</span>
+            <h3>Smub | 🏆 Winner of the National "Jury's Favorite" Award</h3>
+
+            <div class="project-filters">
+              <span class="filters formation">Training</span>
+              <span class="filters godot">Godot</span>
+              <span class="filters backend">Backend</span><br />
+              <span class="filters design">Design</span>
+              <span class="filters marketing">Marketing</span>
+            </div>
+
             <p>
-              Creation of a video game in 1 week on the theme of temperature as
-              part of a GameJam organized by MyDigitalSchool
+              Creation of a video game in one week based on the theme of
+              temperature, as part of a Game Jam organized by MyDigitalSchool.
             </p>
+
             <a
               href="https://smuub.itch.io/smub"
               target="_blank"
               class="project-link"
-              >Play the Game</a
             >
+              Play the Game
+            </a>
+
             <a
               href="https://www.linkedin.com/feed/update/urn:li:activity:7431675680519602176/"
               target="_blank"
               class="project-link"
-              >| More Info</a
             >
+              | More Info
+            </a>
           </div>
         </div>
+
+        <!-- PROJECT 4 -->
         <div class="project-card">
           <img class="thumb" src="/img/Projects/barambe.png" alt="Bar'ambe" />
+
           <div class="project-info">
             <h3>Bar'ambe</h3>
-            <span class="filters formation">Education</span>
-            <span class="filters integration">Web Integration</span>
-            <span class="filters javascript">JavaScript</span><br />
-            <span class="filters html">Html</span>
-            <span class="filters css">Css</span>
-            <span class="filters marketing">Marketing</span>
+
+            <div class="project-filters">
+              <span class="filters formation">Training</span>
+              <span class="filters integration">Web Integration</span>
+              <span class="filters javascript">JavaScript</span><br />
+              <span class="filters html">HTML</span>
+              <span class="filters css">CSS</span>
+              <span class="filters marketing">Marketing</span>
+            </div>
+
             <p>
-              Brainstorming a business and handling all marketing and visual
-              aspects
+              Brainstorming and development of a business concept, including the
+              entire marketing and visual identity.
             </p>
+
             <a
               href="https://barambe.netlify.app/"
               class="project-link"
               target="_blank"
-              >View Website</a
             >
+              View Website
+            </a>
+
             <a
               href="/Dossier Créative Lab - Barambe 1.pdf"
               class="project-link"
               target="_blank"
-              >| View Complementary Information (French Version)</a
             >
+              | View Document (In French)
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 5 -->
+        <div class="project-card">
+          <img
+            class="thumb"
+            src="/img/Projects/alur-paris.png"
+            alt="Alur Paris"
+          />
+
+          <div class="project-info">
+            <h3>Alur Paris</h3>
+
+            <div class="project-filters">
+              <span class="filters formation">Training</span>
+              <span class="filters php">PHP</span>
+              <span class="filters javascript">JavaScript</span><br />
+              <span class="filters html">HTML</span>
+              <span class="filters tailwind">Tailwind</span>
+            </div>
+
+            <p>
+              Creation of a niche perfume e-commerce website in one week as part
+              of my training.
+            </p>
+
+            <a
+              href="https://alur-paris.guillaume-goizet.mds-angers.yt/"
+              target="_blank"
+              class="project-link"
+            >
+              View Website
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 6 -->
+        <div class="project-card">
+          <img
+            class="thumb"
+            src="/img/Projects/la-vaillante.png"
+            alt="La Vaillante"
+          />
+
+          <div class="project-info">
+            <h3>La Vaillante</h3>
+
+            <div class="project-filters">
+              <span class="filters entreprise">Company</span>
+              <span class="filters design">Design</span>
+              <span class="filters integration">Web Integration</span><br />
+              <span class="filters wordpress">WordPress</span>
+            </div>
+
+            <p>Redesign of a showcase website for a gymnastics club.</p>
+
+            <a
+              href="https://www.lavaillante.com/"
+              target="_blank"
+              class="project-link"
+            >
+              View Website
+            </a>
           </div>
         </div>
       </div>
-
-      <!--<div class="projects-more fade-up">
-    <a href="#">Swipe to explore more projects</a>
-  </div>-->
     </section>
 
     <!-- CONTACT -->
@@ -298,7 +385,7 @@
 
       <div class="contact-heading fade-up">
         <span class="main">Do you have any questions? </span>
-        <span class="accent">Contact Me</span>
+        <span class="accent">Contact me</span>
       </div>
 
       <div class="contact-email fade-up">
@@ -306,12 +393,14 @@
           <a href="mailto:guillaumegoizet.contact@gmail.com">
             GUILLAUMEGOIZET.CONTACT@GMAIL.COM
           </a>
+
           <div class="email-line"></div>
         </div>
       </div>
 
       <p class="contact-or fade-up">or</p>
-      <p class="contact-sub fade-up">leave me a message</p>
+
+      <p class="contact-sub fade-up">Leave me a message</p>
 
       <form
         class="contact-form fade-up"
@@ -328,6 +417,7 @@
               autocomplete="name"
             />
           </div>
+
           <div class="form-field">
             <input
               type="email"
@@ -337,9 +427,11 @@
             />
           </div>
         </div>
+
         <div class="form-field">
           <textarea placeholder="MESSAGE" name="message"></textarea>
         </div>
+
         <button type="submit" class="btn-send">Send</button>
       </form>
     </section>
@@ -350,26 +442,36 @@
         <i class="copy-sym">©</i>
         Guillaume Goizet 2026
       </div>
+
       <div class="footer-links">
         <a
           href="https://eduservices.grimp.io/share?profile=kCNetyWnjxm8"
           target="_blank"
           rel="noopener"
-          >Grimp</a
         >
-        <a href="/CV_GuillaumeGoizet.pdf" target="_blank" rel="noopener">CV</a>
+          Grimp
+        </a>
+
+        <a href="/CV_GuillaumeGoizet.pdf" target="_blank" rel="noopener">
+          CV
+        </a>
+
         <a
           href="https://github.com/GuillaumeGOIZET"
           target="_blank"
           rel="noopener"
-          >Github</a
         >
+          Github
+        </a>
+
         <a
           href="https://www.linkedin.com/in/guillaume-goizet-2b29b0298/"
           target="_blank"
           rel="noopener"
-          >Linkedin</a
         >
+          Linkedin
+        </a>
+
         <a href="mailto:guillaumegoizet.contact@gmail.com">Mail</a>
       </div>
     </footer>
@@ -384,18 +486,22 @@
         },
         { threshold: 0.12 },
       );
+
       document.querySelectorAll(".fade-up").forEach((el) => obs.observe(el));
 
       // Active nav link
       const sections = document.querySelectorAll("section[id]");
       const links = document.querySelectorAll("nav a");
+
       window.addEventListener(
         "scroll",
         () => {
           let cur = "";
+
           sections.forEach((s) => {
             if (scrollY >= s.offsetTop - 120) cur = s.id;
           });
+
           links.forEach((a) => {
             a.classList.toggle("active", a.getAttribute("href") === "#" + cur);
           });
@@ -406,11 +512,12 @@
       // Form submit
       async function handleSubmit(e) {
         e.preventDefault();
+
         const btn = e.target.querySelector(".btn-send");
         const form = e.target;
         const data = new FormData(form);
 
-        btn.textContent = "Envoi en cours...";
+        btn.textContent = "Sending...";
         btn.disabled = true;
 
         try {
@@ -421,41 +528,47 @@
           });
 
           if (res.ok) {
-            btn.textContent = "Envoyé ✓";
+            btn.textContent = "Sent ✓";
             btn.style.background = "#3b6195";
             form.reset();
           } else {
-            btn.textContent = "Erreur, réessaie";
+            btn.textContent = "Error, try again";
             btn.style.background = "#c0392b";
           }
         } catch {
-          btn.textContent = "Erreur réseau";
+          btn.textContent = "Network error";
           btn.style.background = "#c0392b";
         } finally {
           btn.disabled = false;
+
           setTimeout(() => {
-            btn.textContent = "Envoyer";
+            btn.textContent = "Send";
             btn.style.background = "";
           }, 4000);
         }
       }
 
-      // ── PARALLAX WATERMARK ──────────────────────────
-      const watermark = document.querySelector(".hero");
+      // Watermark parallax
+      const watermark = document.querySelector(".hero-watermark");
 
       function updateParallax() {
-        // Le watermark monte 2x moins vite que le scroll → effet de profondeur
         const offset = window.scrollY * 0.45;
-        watermark.style.transform = `translateY(-${offset}px)`;
+
+        if (watermark) {
+          watermark.style.transform = `translateY(-${offset}px)`;
+        }
       }
 
-      window.addEventListener("scroll", updateParallax, { passive: true });
+      window.addEventListener("scroll", updateParallax, {
+        passive: true,
+      });
+
       updateParallax();
 
       // ── SCROLL TO TOP ──────────────────────────
       const btn = document.getElementById("scrollTopBtn");
 
-      // Afficher le bouton après scroll
+      // Show button after scrolling
       window.addEventListener("scroll", () => {
         if (window.scrollY > 300) {
           btn.classList.add("show");
@@ -464,13 +577,44 @@
         }
       });
 
-      // Scroll smooth vers le haut
+      // Smooth scroll to top
       btn.addEventListener("click", () => {
         window.scrollTo({
           top: 0,
           behavior: "smooth",
         });
       });
+    </script>
+
+    <script>
+      // Burger menu
+      const burger = document.querySelector(".burger");
+      const header = document.querySelector("header");
+      const menuLinks = document.querySelectorAll("header nav a");
+
+      if (burger && header) {
+        burger.addEventListener("click", () => {
+          const isOpen = header.classList.toggle("menu-open");
+
+          burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+          burger.setAttribute(
+            "aria-label",
+            isOpen ? "Close menu" : "Open menu",
+          );
+        });
+
+        // Close menu when clicking a link
+        menuLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            header.classList.remove("menu-open");
+
+            burger.setAttribute("aria-expanded", "false");
+
+            burger.setAttribute("aria-label", "Open menu");
+          });
+        });
+      }
     </script>
   </body>
 </html>
